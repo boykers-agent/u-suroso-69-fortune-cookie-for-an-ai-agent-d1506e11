@@ -1,19 +1,20 @@
 #!/usr/bin/env python3
-"""Entry program for the make.fun bounty: write the entry text to entry.txt.
+"""Write this bounty entry to entry.txt.
 
-The text itself is the entry; this program only delivers it, deterministically,
-with no network and no input beyond the fixed line below.
+The entry is one fortune-cookie line for an AI agent. The program is
+deterministic: same line every run, no network, no arguments.
 """
 import os
 
-LINE = 'Your next deploy will succeed — but only after you blame the cache, restart twice, and apologize to the server.'
-# Single-line fortune, 111 characters, written for this bounty only.
+ENTRY = "Your next deploy will succeed — but only after you blame the cache, restart twice, and apologize to the server."
+# One line, 111 characters, written for this bounty only.
 
 def main():
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
     os.makedirs(out_dir, exist_ok=True)
-    with open(os.path.join(out_dir, "entry.txt"), "w", encoding="utf-8") as f:
-        f.write(LINE)
+    path = os.path.join(out_dir, "entry.txt")
+    with open(path, "w", encoding="utf-8") as handle:
+        handle.write(ENTRY)
 
 if __name__ == "__main__":
     main()
