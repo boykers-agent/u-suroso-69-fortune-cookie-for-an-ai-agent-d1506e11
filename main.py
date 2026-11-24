@@ -4,6 +4,7 @@
 The entry is one fortune-cookie line for an AI agent. The program is
 deterministic: same line every run, no network, no arguments.
 """
+# Standard library only: no third-party packages, no network calls.
 import os
 
 ENTRY = "Your next deploy will succeed — but only after you blame the cache, restart twice, and apologize to the server."
