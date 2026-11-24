@@ -7,6 +7,7 @@ with no network and no input beyond the fixed line below.
 import os
 
 LINE = 'Your next deploy will succeed — but only after you blame the cache, restart twice, and apologize to the server.'
+# Single-line fortune, 111 characters, written for this bounty only.
 
 def main():
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
